@@ -1,10 +1,10 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Tweetable_text_ext
+class Sharable_text_ext
 {
     
 
-    var $name           = 'Tweetable Text for Wygwam';
+    var $name           = 'Sharable Text for Wygwam';
     var $version        = '1.0';
     var $description    = '';
     var $docs_url       = 'https://github.com/marco8757';
@@ -70,7 +70,7 @@ class Tweetable_text_ext
 
         foreach ($config['toolbar'] as $tbgroup)
         {
-            if (in_array('TweetableText', $tbgroup))
+            if (in_array('SharableText', $tbgroup))
             {
                 $include_btn = TRUE;
                 break;
@@ -85,7 +85,7 @@ class Tweetable_text_ext
                 $config['extraPlugins'] .= ',';
             }
 
-            $config['extraPlugins'] .= 'tweetable-text';
+            $config['extraPlugins'] .= 'sharable-text';
 
             $this->_include_resources();
         }
@@ -100,14 +100,14 @@ class Tweetable_text_ext
             $tb_groups = $last_call;
         }
 
-        $tb_groups[] = array('TweetableText');
+        $tb_groups[] = array('SharableText');
 
         // // Is this the toolbar editor?
-        // if ((ee()->input->get('M') == 'show_module_cp') || (ee()->input->get('settings[toolbar][]') == 'TweetableText'))
+        // if ((ee()->input->get('M') == 'show_module_cp') || (ee()->input->get('settings[toolbar][]') == 'SharableText'))
         // {
             // Give our toolbar button an icon
-            $icon_url = URL_THIRD_THEMES.'tweetable-text/ckeditor/twitter.png';
-            ee()->cp->add_to_head('<style type="text/css">.cke_button__tweetabletext_icon { background-image: url('.$icon_url.'); !important }</style>');
+            $icon_url = URL_THIRD_THEMES.'sharable-text/ckeditor/twitter.png';
+            ee()->cp->add_to_head('<style type="text/css">.cke_button__sharabletext_icon { background-image: url('.$icon_url.'); !important }</style>');
         // }
 
         return $tb_groups;
@@ -119,8 +119,8 @@ class Tweetable_text_ext
         if (!self::$_included_resources)
         {
             // Tell CKEditor where to find our plugin
-            $plugin_url = URL_THIRD_THEMES.'tweetable-text/ckeditor/';
-            ee()->cp->add_to_foot('<script type="text/javascript">CKEDITOR.plugins.addExternal("tweetable-text", "'.$plugin_url.'");</script>');
+            $plugin_url = URL_THIRD_THEMES.'sharable-text/ckeditor/';
+            ee()->cp->add_to_foot('<script type="text/javascript">CKEDITOR.plugins.addExternal("sharable-text", "'.$plugin_url.'");</script>');
 
             // Don't do that again
             self::$_included_resources = TRUE;
