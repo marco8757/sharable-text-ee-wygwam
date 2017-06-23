@@ -19,7 +19,7 @@
 				    label: "Share this",
 				    command: 'sharable-text',
 				    // toolbar: 'insert',
-				    icon: this.path + 'twitter.png'
+				    icon: this.path + 'share.png'
 				});
 
     }
