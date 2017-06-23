@@ -10,13 +10,13 @@
 				        var originalHTML = edt.getSelectedHtml(true);
 				        var stripHTML = encodeURI(originalHTML.replace(/(<([^>]+)>)/ig,""));
 
-				        edt.insertHtml("<a class='sharable-text' href='https://twitter.com/intent/tweet?text=" + stripHTML + "' target='_blank'>" + originalHTML + "</a>");
+				        edt.insertHtml("<span class='sharable-text' data-sharable-text=" + stripHTML + ">" + originalHTML + "</span>");
 
 				    }
 				});
 
-        editor.ui.addButton('Sharable Text', {
-						label: "Share this",
+        editor.ui.addButton('SharableText', {
+				    label: "Share this",
 				    command: 'sharable-text',
 				    // toolbar: 'insert',
 				    icon: this.path + 'twitter.png'
