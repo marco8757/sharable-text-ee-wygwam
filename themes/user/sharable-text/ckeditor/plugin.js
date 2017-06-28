@@ -8,9 +8,10 @@
 				    exec: function(edt) {
 
 				        var originalHTML = edt.getSelectedHtml(true);
-				        var stripHTML = encodeURI(originalHTML.replace(/(<([^>]+)>)/ig,""));
+				        // var stripHTML = encodeURI(originalHTML.replace(/(<([^>]+)>)/ig,""));
+				        var stripHTML = originalHTML.replace(/(<([^>]+)>)/ig,"");
 
-				        edt.insertHtml("<span class='sharable-text' data-sharable-text=" + stripHTML + ">" + originalHTML + "</span>");
+				        edt.insertHtml("<span class='sharable-text' data-sharable-text='" + stripHTML + "'>" + originalHTML + "</span>");
 
 				    }
 				});
