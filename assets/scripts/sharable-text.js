@@ -1,17 +1,24 @@
 
 
 var sharableURL = window.location.href;
+var facebookAppID = 'YOUR_APP_ID_HERE';
 
 $(".sharable-text").each(function(){
 	$(this).append('<a class="sharable-text__facebook" href="https://www.facebook.com/sharer/sharer.php?u=' + sharableURL + '" target="_blank">Share this</a> <a class="sharable-text__twitter" href="https://twitter.com/intent/tweet?text=' + $(this).data('sharable-text') + '" target="_blank">Tweet this</a>');
 	
-    console.log($(this).data('sharable-text'));
 });
 
 
-// using fb share dialog to get full customizable quotes
-//  $(this).append('<a class="sharable-text__facebook" data-sharable-text="' + $(this).data('sharable-text') + '">Share this</a> <a class="sharable-text__twitter" href="https://twitter.com/intent/tweet?text=' + $(this).data('sharable-text') + '" target="_blank">Tweet this</a>');
-// 
+// Normal sharing
+// $(".sharable-text").each(function(){
+// 	$(this).append('<a class="sharable-text__facebook" href="https://www.facebook.com/sharer/sharer.php?u=' + sharableURL + '" target="_blank">Share this</a> <a class="sharable-text__twitter" href="https://twitter.com/intent/tweet?text=' + $(this).data('sharable-text') + '" target="_blank">Tweet this</a>');
+// });
+
+
+// Facebook dialog sharing with quotes
+// $(".sharable-text").each(function(){
+// 	$(this).append('<a class="sharable-text__facebook" data-sharable-text="' + $(this).data('sharable-text') + '">Share this</a> <a class="sharable-text__twitter" href="https://twitter.com/intent/tweet?text=' + $(this).data('sharable-text') + '" target="_blank">Tweet this</a>');
+// });
 
 // if ( $('.sharable-text').length > 0 ) {
 
@@ -19,7 +26,7 @@ $(".sharable-text").each(function(){
 //     var js, fjs = d.getElementsByTagName(s)[0];
 //     if (d.getElementById(id)) return;
 //     js = d.createElement(s); js.id = id;
-//     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+//     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + facebookAppID;
 //     fjs.parentNode.insertBefore(js, fjs);
 //   }(document, 'script', 'facebook-jssdk'));
 
@@ -35,9 +42,5 @@ $(".sharable-text").each(function(){
 //   }, function(response){});
 
 // });
-
-
-//  issue with fb app id 
-//  https://stackoverflow.com/questions/20956229/has-facebook-sharer-php-changed-to-no-longer-accept-detailed-parameters
 
   
