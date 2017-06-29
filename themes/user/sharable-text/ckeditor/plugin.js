@@ -11,10 +11,14 @@
 				        // var stripHTML = encodeURI(originalHTML.replace(/(<([^>]+)>)/ig,""));
 				        var stripHTML = originalHTML.replace(/(<([^>]+)>)/ig,"");
 
-				        edt.insertHtml("<span class='sharable-text' data-sharable-text='" + stripHTML + "'>" + originalHTML + "</span>");
+				        // edt.insertHtml("<sharable-text>" + originalHTML + "</sharable-text>");
+				        var element = CKEDITOR.dom.element.createFromHtml( "<sharable-text>" + originalHTML + "</sharable-text>" );
+								edt.insertElement( element );
 
 				    }
 				});
+
+        editor.addContentsCss( this.path + 'styles/sharable-text.css' );
 
         editor.ui.addButton('SharableText', {
 				    label: "Share this",
