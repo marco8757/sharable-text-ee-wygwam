@@ -1,0 +1,41 @@
+p:hover sharable-text {
+	background: #F9DCA4;
+}
+
+sharable-text a[class^="sharable-text"] {
+	text-decoration: none;
+	color: #FFF;
+	text-decoration: none;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	text-align: center;
+}
+
+sharable-text a.sharable-text__facebook {
+	background: #5872A7;
+}
+
+sharable-text a.sharable-text__twitter {
+	background: #49BBE7;
+	
+}
+
+.sharable-text__tooltip {
+	display: none; 
+	font-size: 0.7em;
+}
+
+sharable-text a[class^="sharable-text"]:hover {
+	border-radius: 1em;
+  height: auto; 
+	width: auto; 
+	padding: 0 1em;
+}
+
+sharable-text a[class^="sharable-text"]:hover .sharable-text__tooltip{
+	display: inline;
+	vertical-align: text-top;
+}
+
